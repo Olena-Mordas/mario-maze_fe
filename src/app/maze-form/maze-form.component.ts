@@ -16,8 +16,8 @@ export class MazeFormComponent {
 
   onSubmit() { 
     this.submitted = true;
-    let res = this.service.getAllShortstPaths(this.model.size,this.model.grid);
-    console.log(res);
+    this.service.getAllShortstPaths(this.model.size,this.model.grid)
+      .subscribe(paths=>this.allPaths = paths);
 
   }
 

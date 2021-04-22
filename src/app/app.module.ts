@@ -7,11 +7,13 @@ import { MazeFormComponent } from './maze-form/maze-form.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MazeService } from './maze.service';
+import { MazeComponent } from './maze/maze.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MazeFormComponent
+    MazeFormComponent,
+    MazeComponent
   ],
   imports: [
     BrowserModule,
