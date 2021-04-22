@@ -1,0 +1,41 @@
+<div class="container">
+    <div [hidden]="submitted">
+      <h1>Maze Form</h1>
+      <form (ngSubmit)="onSubmit()" #gridForm="ngForm">
+        <div class="form-group">
+          <label for="size">Size</label>
+          <input type="number" class="form-control" id="size"
+                 required
+                 [(ngModel)]="model.size" name="size"
+                 #size="ngModel">
+          <div [hidden]="size.valid || size.pristine"
+               class="alert alert-danger">
+            Size is required
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="grid">Grid Structure</label>
+          <input type="text" class="form-control" id="grid"
+                 [(ngModel)]="model.grid" name="grid">
+        </div>
+  
+        <button type="submit" class="btn btn-success" [disabled]="!gridForm.form.valid">Submit</button>
+      </form>
+    </div>
+  
+    <div [hidden]="!submitted">
+      <h2>You submitted the following:</h2>
+      <div class="row">
+        <div class="col-xs-3">Size</div>
+        <div class="col-xs-9">{{ model.size }}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">Grid Structure</div>
+        <div class="col-xs-9">{{ model.grid }}</div>
+      </div>
+  
+      <br>
+      <!-- <button class="btn btn-primary" (click)="submitted=false">Edit</button> -->
+    </div>
+  </div>
