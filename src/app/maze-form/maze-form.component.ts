@@ -10,7 +10,8 @@ import { MazeService } from '../maze.service';
 export class MazeFormComponent {
 
   constructor(private service: MazeService) { }
-  model = new Grid(0,'');
+  //  --m -x- -p-
+  model = new Grid(0,''); 
   allPaths=[]
   submitted = false;
 

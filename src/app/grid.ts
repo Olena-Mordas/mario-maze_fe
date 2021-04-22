@@ -1,8 +1,10 @@
 export class Grid {
 
+  public grid: string;
+
     constructor(
       public size: number,
-      public grid: string,
-    ) {  }
+      grid: string,
+    ) { this.grid = grid.replace(' ',''); }
   
 }

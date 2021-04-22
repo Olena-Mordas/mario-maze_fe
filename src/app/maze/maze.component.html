@@ -1,7 +1,10 @@
-<table class="table table-hover table-bordered table-success border-success">
+<table class="table table-hover table-bordered table-dark">
     <tbody>
-      <tr *ngFor="let row of counter(size); let y = index">
-        <td *ngFor="let col of counter(size); let x = index">X</td>
+      <tr *ngFor="let row of counter(size); let i = index">
+        <td *ngFor="let col of counter(size); let j = index"
+        class="table-cell" >
+         {{structure.replaceAll(" ", "").charAt(i*size+j)}}
+        </td>
       </tr>
     </tbody>
   

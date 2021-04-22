@@ -1,4 +1,6 @@
+
 <div class="container">
+  <h1>Mario Save Princess</h1>
     <div [hidden]="submitted">
       <h1>Maze Form</h1>
       <form (ngSubmit)="onSubmit()" #gridForm="ngForm">
@@ -16,6 +18,7 @@
   
         <div class="form-group">
           <label for="grid">Grid Structure</label>
+          <div class="capture">Type in grid rows separated by space </div>
           <input type="text" class="form-control" id="grid"
                  [(ngModel)]="model.grid" name="grid">
         </div>
@@ -35,15 +38,12 @@
         <div class="col-xs-9">{{ model.grid }}</div>
       </div>
   
-      
-      <br>
-      <!-- <button class="btn btn-primary" (click)="submitted=false">Edit</button> -->
-    </div>
-
-    <div [hidden]="!submitted">
       <maze 
         [size] = "this.model.size"
         [structure] = "this.model.grid"
         ></maze>
+      <br>
+      <!-- <button class="btn btn-primary" (click)="submitted=false">Edit</button> -->
     </div>
+
   </div>
