@@ -11,7 +11,7 @@ export class MazeFormComponent {
 
   constructor(private service: MazeService) { }
   
-  model = new Grid(0,''); 
+  model = new Grid(1,''); 
   allPaths=[]
   submitted = false;
 

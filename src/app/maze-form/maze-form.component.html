@@ -4,10 +4,16 @@
     <div [hidden]="submitted">
       <h1>Maze Form</h1>
       <br>
+      <div class="description ">
+        Plese, provide NxN grid, which containes 1 Mario ('m'), 
+        1 Princess ('p'), emtpy cells ('-')or obstacles('x').
+      </div>
+      <br>
       <form (ngSubmit)="onSubmit()" #gridForm="ngForm">
-        <div class="form-group">
+        <div class="form-group col-xs-3">
           <label for="size">Size</label>
-          <input type="number" class="form-control" id="size"
+          <div class="capture">Size of the square grid </div>
+          <input type="number" min="1" class="form-control" id="size"
                  required
                  [(ngModel)]="model.size" name="size"
                  #size="ngModel">
@@ -17,11 +23,16 @@
           </div>
         </div>
   
-        <div class="form-group">
+        <div class="form-group col-xs-3">
           <label for="grid">Grid Structure</label>
           <div class="capture">Type in grid rows separated by space </div>
           <input type="text" class="form-control" id="grid"
-                 [(ngModel)]="model.grid" name="grid">
+                 [(ngModel)]="model.grid" name="grid"
+                 #grid="ngModel">
+          <div [hidden]="grid.valid || grid.pristine"
+              class="alert alert-danger">
+              Grid is required and should contain only 'm', 'p' , '-' or 'x'
+          </div>
         </div>
   
         <button type="submit" class="btn btn-success" [disabled]="!gridForm.form.valid">Submit</button>
