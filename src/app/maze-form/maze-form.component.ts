@@ -10,7 +10,7 @@ import { MazeService } from '../maze.service';
 export class MazeFormComponent {
 
   constructor(private service: MazeService) { }
-  //  --m -x- -p-
+  
   model = new Grid(0,''); 
   allPaths=[]
   submitted = false;
@@ -21,6 +21,5 @@ export class MazeFormComponent {
       .subscribe(paths=>this.allPaths = paths);
 
   }
-
 
 }

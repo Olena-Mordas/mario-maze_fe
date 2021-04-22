@@ -9,12 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { MazeService } from './maze.service';
 import { MazeComponent } from './maze/maze.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PathListComponent } from './path-list/path-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MazeFormComponent,
-    MazeComponent
+    MazeComponent,
+    PathListComponent
   ],
   imports: [
     BrowserModule,
