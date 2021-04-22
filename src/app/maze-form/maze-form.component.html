@@ -39,4 +39,11 @@
       <br>
       <!-- <button class="btn btn-primary" (click)="submitted=false">Edit</button> -->
     </div>
+
+    <div [hidden]="!submitted">
+      <maze 
+        [size] = "this.model.size"
+        [structure] = "this.model.grid"
+        ></maze>
+    </div>
   </div>

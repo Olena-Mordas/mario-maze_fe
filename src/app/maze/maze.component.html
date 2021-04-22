@@ -1,1 +1,8 @@
-<p>maze works!</p>
+<table class="table table-hover table-bordered table-success border-success">
+    <tbody>
+      <tr *ngFor="let row of counter(size); let y = index">
+        <td *ngFor="let col of counter(size); let x = index">X</td>
+      </tr>
+    </tbody>
+  
+</table>

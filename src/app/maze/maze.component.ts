@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-maze',
+  selector: 'maze',
   templateUrl: './maze.component.html',
   styleUrls: ['./maze.component.scss']
 })
-export class MazeComponent implements OnInit {
+export class MazeComponent {
 
+  @Input('size')
+  size:number;
+
+  @Input('structure')
+  structure:string;
+  
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
+  counter(n: number): Array<number> {
+    return Array(n);
+  }
 }
