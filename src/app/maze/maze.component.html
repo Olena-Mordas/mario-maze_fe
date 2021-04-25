@@ -3,7 +3,7 @@
       <tr *ngFor="let row of counter(size); let i = index">
         <td *ngFor="let col of counter(size); let j = index"
         class="table-cell" >
-         {{structure.replaceAll(" ", "").charAt(i*size+j)}}
+         {{structure?.replaceAll(" ", "").charAt(i*size+j)}}
         </td>
       </tr>
     </tbody>
