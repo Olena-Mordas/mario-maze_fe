@@ -12,7 +12,7 @@
       <form (ngSubmit)="onSubmit()" #gridForm="ngForm">
         <div class="form-group col-xs-3">
           <label for="size">Size</label>
-          <div class="capture">Size of the square grid </div>
+          <div class="capture">Define the size of the square grid </div>
           <input type="number" min="1" class="form-control" id="size"
                  required
                  [(ngModel)]="model.size" name="size"
@@ -28,6 +28,7 @@
           <div class="capture">Type in grid rows separated by space </div>
           <input type="text" class="form-control" id="grid"
                  [(ngModel)]="model.grid" name="grid"
+                 pattern="[mpx \-]*"
                  #grid="ngModel">
           <div [hidden]="grid.valid || grid.pristine"
               class="alert alert-danger">
@@ -50,7 +51,8 @@
         <div class="col-xs-9">{{ model.grid }}</div>
       </div>
 
-      <path-list [pathList] = "allPaths"></path-list>
+      <path-list *ngIf="!errorFlag" [pathList] = "allPaths"></path-list>
+      <div *ngIf="errorFlag" class="alert alert-danger">Error flag was raised. Make sure you have a correct grid structure.</div>
 
       <br>
 

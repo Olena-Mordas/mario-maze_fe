@@ -1,4 +1,15 @@
-
+.container {
+  font-size: 20px;
+  div{
+    .capture{
+      font-size:12px;
+    }
+  }
+  button{
+    margin-top: 45px;
+    font-size: 15px;
+  }
+}
 .ng-valid[required], .ng-valid.required  {
   border-left: 5px solid #42A948; /* green */
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Api_Response } from './api_response';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,6 @@ export class MazeService {
 
   getAllShortstPaths(n :number, grid:string){
     return this.http.get(this.url + '?N='+n+'&grid='+grid)
-      .pipe(map((response:any) =>response.paths));
+      .pipe(map((response:Api_Response) =>response));
   }
 }

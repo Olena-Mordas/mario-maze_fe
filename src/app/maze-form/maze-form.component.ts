@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { throwError } from 'rxjs';
+import { Api_Response } from '../api_response';
 import { Grid } from '../grid';
 import { MazeService } from '../maze.service';
 
@@ -13,13 +15,20 @@ export class MazeFormComponent {
   
   model = new Grid(1,''); 
   allPaths=[]
+  errorFlag = false;
   submitted = false;
 
   onSubmit() { 
     this.submitted = true;
     this.service.getAllShortstPaths(this.model.size,this.model.grid)
-      .subscribe(paths=>this.allPaths = paths);
-
+      .subscribe((response:Api_Response)=>{
+        if(response.error_flag){this.errorFlag=true;}
+        else {
+          this.errorFlag=false;
+          this.allPaths=response.paths;
+        }
+      });
+  
   }
 
 }
