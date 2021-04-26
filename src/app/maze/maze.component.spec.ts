@@ -44,7 +44,6 @@ describe('MazeComponent', () => {
     const structure = '---m ---- --x- --px';
     const tableCells = testHostFixture.debugElement
       .queryAll(By.css('td'));
-    console.log(tableCells);
 
     tableCells.forEach((cell, index) => {
       expect(cell.nativeNode.innerText).toEqual(structure.replace(/\s/g, '').charAt(index))
