@@ -38,7 +38,7 @@ describe('MazeComponent', () => {
     const tableCells = testHostFixture.debugElement
       .queryAll(By.css('td'));
       expect(tableCells.length).toEqual(size*size);
-  })
+  });
 
   it('check table content', () =>{
     const structure = '---m ---- --x- --px';
