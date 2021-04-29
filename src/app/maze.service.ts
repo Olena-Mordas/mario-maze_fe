@@ -9,12 +9,12 @@ import { Observable } from 'rxjs';
 })
 export class MazeService {
 
-  url = 'http://127.0.0.1:8000/maze';
+  url = 'http://127.0.0.1:8000/maze/';
 
   constructor(private http: HttpClient) { }
 
   getAllShortstPaths(n :number, grid:string):Observable<Api_Response>{
-    return this.http.get(this.url + '?N='+n+'&grid='+grid)
+    return this.http.get(this.url +n+'&'+grid)
       .pipe(map((response:Api_Response) =>response));
   }
 }
