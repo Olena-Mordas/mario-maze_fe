@@ -34,7 +34,7 @@ describe('MazeServiceService', () => {
     service.getAllShortstPaths(grid.size,grid.grid).subscribe(res=>{
       expect(res).toEqual(dummyResponse);
     })
-    const req = httpMock.expectOne('http://127.0.0.1:8000/maze' + '?N='+grid.size+'&grid='+grid.grid);
+    const req = httpMock.expectOne('http://127.0.0.1:8000/maze/'+grid.size+'&'+grid.grid);
     expect(req.request.method).toBe('GET');
     req.flush(dummyResponse);
   });
